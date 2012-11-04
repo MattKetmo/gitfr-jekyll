@@ -1,0 +1,42 @@
+---
+layout: default
+title: "#gitfr"
+---
+
+<section class="lead">
+    <p>Bienvenu(e) sur le site #gitfr, modeste site francophone sur Git.</p>
+    <p>L'objectif du projet #gitfr est la promotion du bien et la destruction du mal (mais si, vous savez bien, SVN, CVS...).</p>
+    <p>Je fais des ateliers et conférences (gratuits) en français, n'hésitez pas à me contacter si cela vous intéresse.</p>
+</section>
+
+<section class="blog">
+    <div class="blog-entries">
+        {% for post in paginator.posts %}
+            <article class="entry">
+                <h2>
+                    <a href="{{ post.url }}">{{ post.title }}</a>
+                </h2>
+                <time datetime="{{ post.date|date: '%Y-%m-%d' }}" title="{{ post.date|date: '%Y-%m-%d' }}">{{ post.date | date: "%d %b" }}</time>
+            </article>
+        {% endfor %}
+
+        <!-- Pagination links -->
+        <nav class="pagination">
+            {% if paginator.previous_page %}
+                {% if paginator.previous_page == 1 %}
+                    <a href="/" class="previous" rel="prev">
+                {% else %}
+                    <a href="/page{{ paginator.previous_page }}" class="previous" rel="prev">
+                {% endif %}
+                    &larr; Précédent
+                </a>
+            {% endif %}
+                <span class="page-number ">Page {{ paginator.page }} sur {{ paginator.total_pages }}</span>
+            {% if paginator.next_page %}
+                <a href="/page{{ paginator.next_page }}" class="next" rel="next">
+                    Suivant &rarr;
+                </a>
+            {% endif %}
+        </nav>
+    </div>
+</section>

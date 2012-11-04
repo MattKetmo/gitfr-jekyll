@@ -1,0 +1,31 @@
+---
+layout: default
+---
+
+<article class="blog-entry">
+    <header>
+        <h1>{{ page.title}}</h1>
+        <div class="meta">
+            <time datetime="{{ page.date | date: "%Y-%m-%d" }}">{{ page.date | date_to_string }}</time>
+            | Catégories :
+            {% for category in page.categories %}
+                <a href="#">{{ category }}</a>{% unless forloop.last %}, {% endunless %}
+            {% endfor %}
+        </div>
+    </header>
+
+    <div class="content typeset">
+        {{ content }}
+    </div>
+
+    <!--
+    <section class="comments">
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            var disqus_url = "http://www.gitfr.net/blog/2012/07/01/retour-sur-le-breizhcamp-2012";
+        </script>
+        <script type="text/javascript" src="http://disqus.com/forums/gitfr/embed.js"></script>
+        <noscript><a href="http://gitfr.disqus.com/?url=ref">View the discussion thread.</a></noscript>
+    </section>
+    -->
+</article>

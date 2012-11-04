@@ -1,0 +1,195 @@
+$text-baseline: 16px;
+
+// Define styles for blocks of content scoped within the .copy rather than
+// making them global. Global styles will be constantly overridden.
+.typeset {
+    // @include improve-text-rendering;
+    font-size: 16px;
+    line-height: 25px;
+
+    // Set the baseline on all elements directly inside a copy block
+    // Margin won't work on inline elements anyway
+    & > * {
+        margin-bottom: $text-baseline;
+    }
+
+    // Block Elements
+    // ----------------------------------------
+
+    p {
+        margin: 10px 0;
+    }
+
+    address {
+
+    }
+
+    blockquote {
+        font-style: italic;
+        background: rgba(249, 249, 249, 0.6);
+        border-left: 1px solid #ccc;
+        margin: 1.5em 10px;
+        padding: .5em 10px;
+        quotes: "\201C""\201D""\2018""\2019";;
+
+        p {
+            display:inline;
+        }
+
+        &:before, &:after {
+            color: #ccc;
+            font-size: 4em;
+            line-height: .1em;
+            vertical-align: -.4em;
+        }
+        &:before {
+            margin-right: .15em;
+            content: open-quote;
+        }
+        &:after {
+            content: close-quote;
+        }
+    }
+
+    // Lists
+    // ----------------------------------------
+
+    ul, ol {
+        margin-left: 30px;
+    }
+
+    ul {
+        li {
+            list-style-type: disc;
+        }
+    }
+
+    ol {
+        li {
+            list-style-type: decimal;
+        }
+    }
+
+    li {
+        display: list-item;
+    }
+
+    dl {
+
+    }
+
+    dt {
+
+    }
+
+    dd {
+
+    }
+
+    // Code Blocks
+    // ----------------------------------------
+
+    pre {
+        code {
+            overflow: auto;
+            padding: 7px 10px;
+            display: block;
+            background-color: #444;
+            color: #eee;
+        }
+    }
+
+    code {
+        @include border-radius(3px);
+        font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+        font-size: 0.9em;
+        background-color: #f7f7f9;
+        padding: 2px 4px;
+        border: 1px solid #e1e1e8;
+    }
+
+    // Headings
+    // ----------------------------------------
+
+    h1,h2,h3,h4,h5,h6 {
+        font-weight: bold;
+        margin-top: 20px;
+    }
+
+    h1 {
+        font-size: 1.3em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    h3 {
+        font-size: 1.1em;
+    }
+
+    h4 {
+
+    }
+
+    h5 {
+
+    }
+
+    h6 {
+
+    }
+
+    // Inline Elements
+    // ----------------------------------------
+
+    em {
+        font-style: italic;
+    }
+
+    strong {
+        font-weight: bold;
+    }
+
+    mark {
+        background: yellow;
+    }
+
+    ins {
+        background: green;
+    }
+
+    del {
+        background: red;
+    }
+
+    abbr {
+
+    }
+
+    code {
+
+    }
+
+    dfn {
+
+    }
+
+    // Links
+    // ----------------------------------------
+
+    a {
+        text-decoration: none;
+        color: #0e8a8a;
+    }
+
+    a:visited {
+
+    }
+
+    a:hover {
+        color: #09c;
+        // color: #258aaf;
+        // color: #7aa1b0;
+    }
+}

@@ -1,2 +1,3 @@
 permalink: /blog/:year/:month/:day/:title/
 paginate: 10
+url: http://moquet.net/gitfr-jekyll
